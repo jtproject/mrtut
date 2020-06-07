@@ -1,0 +1,6 @@
+@import '/static/jsys/general_style.css';
+@import '/static/jsys/internal_view_forms.css';
+
+body {
+  background: var(--dark-blue);
+}

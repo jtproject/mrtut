@@ -1,0 +1,40 @@
+{% extends 'jsys/internal_view.html' %}
+
+<!-- PAGE TITLE -->
+{% block title %}Create New Essay{% endblock title %}
+
+
+<!-- PAGE CONTENT -->
+{% block content %}
+
+{% if form %}
+  <div class="formWrap">
+    <div class="formTitle">
+      {{formName}}
+    </div>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="formRow formRowInput">
+        <div class="formInputLabel">
+          {{form.title.label}}
+        </div>
+        <div class="formInput">
+          {{form.title}}
+        </div>
+      </div>
+      <div class="formRow formRowTextArea">
+        <div class="formTextAreaLabel">
+          {{form.content.label}} (Maximum 350 Characters)
+        </div>
+        <div class="formTextArea">
+          {{form.content}}
+        </div>
+      </div>
+      <div class="formRow formRowSubmit">
+        <button type="submit">Post</button>
+      </div>
+    </form>
+  </div>
+{% endif %}
+
+{% endblock content %}

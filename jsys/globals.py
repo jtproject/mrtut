@@ -1,0 +1,3 @@
+class GlobalVariables:
+    MAX_ESSAY_TITLE_LENGTH = 30
+    MAX_ESSAY_CONTENT_LENGTH = 350
