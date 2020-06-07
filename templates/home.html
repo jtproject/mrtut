@@ -8,7 +8,7 @@
   <style>.border{width:200px;border:2px solid yellow;padding:1em;margin:1em;background:var(--light-blue);border-radius:.5em;box-shadow:0px 5px 10px 1px orange,0px -5px 10px 2px var(--dull-red), 0px 0px 10px 2px inset yellow;}</style>
   <link rel="stylesheet" href="/static/view.css">
 </head>
-<body>
+<body style="text-align:center;">
   <h3>{{message}}</h3>
   {% if status %}
     <p>status_code :: {{status}}</p>
@@ -18,12 +18,12 @@
     <a href="/admin">Admin</a>
   </div>
   {% if essay %}
-    <div class="dFlex flexWrap" style="margin-top:1em;">
+    <div class="dFlex flexWrap" style="margin-top:1em;width:100%;justify-content:center;">
       {% for e in essay %}
         <div class="border">
           <p>{{e.timestamp}} by {{e.user}} (Post #{{e.id}})</p>
-          <p>"{{e.title}}"</p>
-          <p>Content :: {{e.concat_content}}</p>
+          <p>"{{e.title|title}}"</p>
+          <p>{{e.concat_content|upper}}</p>
         </div>
       {% endfor %}
     </div>
