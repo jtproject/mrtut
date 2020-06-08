@@ -19,13 +19,16 @@ from django.urls import path
 from essays.views import (
     home, form_essay_create, form_essay_view
 )
+from station.views import (
+    form_station_create
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('essay/create/', form_essay_create),
     path('essay/<int:essayID>/', form_essay_view),
-    path('station/', form_essay_view),
+    path('station/create/', form_station_create),
     path('raw/', home),
 
 ]

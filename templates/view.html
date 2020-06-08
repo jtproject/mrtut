@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>INTERNAL USE [{% block title %}{% endblock title %}]</title>
-  <link rel="stylesheet" href="/static/jsys/internal_view.css">
+  <title>JT Project - {% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" href="/static/view.css">
 </head>
-<body>
+<body style="text-align:center;">
   {% include 'jsys/navigation.html' %}
+
   {% block content %}{% endblock content %}
 </body>
 </html>

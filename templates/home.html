@@ -1,26 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Fake Page</title>
-  <style>.border{width:200px;border:1px solid yellow;padding:1em;margin:1em;background:var(--dull-to-light-blue);border-radius:.5em;box-shadow:0px 5px 10px 1px orange,0px -5px 10px 2px var(--dull-red), 0px 0px 10px 2px inset yellow;}</style>
-  <link rel="stylesheet" href="/static/view.css">
-</head>
-<body style="text-align:center;">
-  <h3>{{message}}</h3>
-  {% if status %}
-    <p>status_code :: {{status}}</p>
+{% extends 'view.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+  {% if message %}
+    {{message}}<br>code[{{status}}]
   {% endif %}
-  <div>
-    <a href="/essay/create">Create New Essay</a> |
-    <a href="/admin">Admin</a>
-  </div>
   {% if station %}
     <div>
       {% for s in station %}
-        <p>"{{s.name}}" -- added {{s.founded_date}}</p>
+        <p>"{{s.name}}" -- added {{s.founded_date}} by: {{s.founder}}</p>
       {% endfor %}
     </div>
   {% endif %}
@@ -35,5 +24,4 @@
       {% endfor %}
     </div>
   {% endif %}
-</body>
-</html>
+{% endblock content %}

@@ -1,4 +1,5 @@
 @import '/static/jsys/general_style.css';
+@import '/static/jsys/navigation.css';
 
 body {
   background: var(--dull-to-light-blue);

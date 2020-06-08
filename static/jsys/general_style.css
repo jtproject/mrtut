@@ -4,6 +4,7 @@
   --dull-blue: #0849c1;
   --dull-red: #c42129;
   --light-blue: #2199ff;
+  --dull-to-dark-blue: linear-gradient(var(--dull-blue), var(--dark-blue));
   --dull-to-light-blue: linear-gradient(var(--dull-blue), var(--light-blue));
   --orange-to-yellow: linear-gradient(orange, yellow);
 
