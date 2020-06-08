@@ -14,6 +14,9 @@ from .forms import (
 from .models import (
     Essay
 )
+from station.models import (
+    Station
+)
 from .serializers import (
     EssaySerializer, EssayCreateSerializer
 )
@@ -26,7 +29,14 @@ from .serializers import (
 ''' Home page '''
 def home(request, *args, **kwargs):
     search_essay = Essay.objects.all()
-    return render(request, 'home.html', context={'message':'Everything seems ok over here', 'status':200, 'essay':search_essay})
+    search_station = Station.objects.all()
+    DATA = {
+        'message':'All clear!',
+        'status':200,
+        'essay':search_essay,
+        'station':search_station
+    }
+    return render(request, 'home.html', context=DATA)
 
 ''' Create essay form '''
 @permission_classes([IsAuthenticated])

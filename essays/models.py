@@ -5,12 +5,12 @@
 from django.conf import settings
 from django.db import models
 '''Project related'''
-#from .models import Essay
+from jsys.globals import GlobalVariables
 
 
 # Global variables
 _U = settings.AUTH_USER_MODEL
-ADMIN_MAX_CONTENT_STRING_LENGTH = 50
+ADMIN_MAX_CONTENT_STRING_LENGTH = GlobalVariables.ADMIN_MAX_CONTENT_STRING_LENGTH
 
 
 # Model classes

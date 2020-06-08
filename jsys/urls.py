@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('essay/create/', form_create_essay),
+    path('station/', form_create_essay),
     path('raw/', home),
 
 ]

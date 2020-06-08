@@ -13,6 +13,9 @@ from jsys.globals import GlobalVariables
 MAX_ESSAY_TITLE_LENGTH = GlobalVariables.MAX_ESSAY_TITLE_LENGTH
 MAX_ESSAY_CONTENT_LENGTH = GlobalVariables.MAX_ESSAY_CONTENT_LENGTH
 
+
+# Forms
+''' Create New Essay Form '''
 class EssayCreateForm(forms.ModelForm):
     title = forms.CharField(label='TITLE', widget=forms.TextInput(attrs={'class':' '}))
     content = forms.CharField(label='ESSAY CONTENT', widget=forms.Textarea(attrs={"rows":5, "cols":20, 'class':' '}))
