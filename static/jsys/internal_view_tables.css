@@ -6,18 +6,21 @@
   border-radius: 1em;
   display: grid;
   grid-template-rows: auto 2em;
+  #box-shadow: 0px 8px 20px -8px gray;
   overflow: hidden;
 }
 
 .essayFooter {
  background: var(--orange-to-yellow);
  padding: .4em 1em;
+ box-shadow: 0px -5px 10px -1px inset var(--dark-blue);
 }
 
 .tableWrap {
   background: var(--dull-to-light-blue);
   width: 500px;
   padding: .5em 1em;
+  box-shadow: 0px 5px 10px -1px inset var(--dark-blue);
 }
 
 .tableTitle {
@@ -56,6 +59,11 @@
   font-weight: 900;
 }
 
+
+
+
+
+/*
 .formRowInput, .formRowSubmit {
   height: 3em;
   display: flex;
@@ -64,36 +72,6 @@
 
 .formRowInput {
   box-shadow: 0px 1px 5px 2px inset var(--dark-blue);
-}
-
-.formRowError {
-  position: relative;
-  top: -1em;
-  margin-bottom:-.5em !important;
-  display: grid;
-}
-
-.formRowError span {
-  font-weight: 900;
-  color: var(--dull-red);
-  background: var(--dark-red);
-  font-style: normal !important;
-  padding: 0 .6em 0 .4em;
-  margin-right: .2em;
-  #border-right: 2px solid var(--dull-red);
-  border-radius: 0 .6em .6em 0;
-}
-
-.formError {
-  color: silver;
-  font-size: .8em;
-  font-style: italic;
-  padding-right: .4em;
-  margin: 0 auto 1em 1em;
-  background: var(--dull-red);
-  border: 1px solid var(--dark-red);
-  border-radius: .2em;
-  overflow: hidden;
 }
 
 .formRowTextArea {
@@ -185,3 +163,4 @@
   background: var(--dull-to-light-blue);
   color: silver;
 }
+*/

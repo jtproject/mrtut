@@ -13,14 +13,14 @@ from jsys.globals import GlobalVariables
 MAX_STATION_NAME_LENGTH = GlobalVariables.MAX_STATION_NAME_LENGTH
 MAX_STATION_CATEGORY_LENGTH = GlobalVariables.MAX_STATION_CATEGORY_LENGTH
 MAX_STATION_BIO_LENGTH = GlobalVariables.MAX_STATION_BIO_LENGTH
-
+a,b,c = 'ex. "The Coolest Station"','ex. "Comedy"','ex. "Just write a short bio..."'
 
 # Forms
 ''' Create New Essay Form '''
 class StationCreateForm(forms.ModelForm):
-    name = forms.CharField(label='name', required=False, widget=forms.TextInput(attrs={}))
-    category = forms.CharField(label='category', required=False, widget=forms.TextInput(attrs={}))
-    bio = forms.CharField(label='station bio', required=False, widget=forms.Textarea(attrs={}))
+    name = forms.CharField(label='name', required=False, widget=forms.TextInput(attrs={'placeholder':a}))
+    category = forms.CharField(label='category', required=False, widget=forms.TextInput(attrs={'placeholder':b}))
+    bio = forms.CharField(label='station bio', required=False, widget=forms.Textarea(attrs={'placeholder':c}))
 
     class Meta:
         model = Station

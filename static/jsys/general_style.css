@@ -18,10 +18,11 @@ body {
 }
 
 
-.mLastChildVert{margin-bottom:0 !important;}
-.pLastChildVert{padding-bottom:0 !important;}
-.mFirstChildVert{margin-top:0 !important;}
-.pFirstChildVert{padding-top:0 !important;}
+.mT0{margin-top:0 !important;}
+.mB0{margin-bottom:0 !important;}
+
+.pT0{padding-top:0 !important;}
+.pB0{padding-bottom:0 !important;}
 
 
 .dFlex{display:flex;}

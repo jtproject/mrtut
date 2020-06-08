@@ -12,13 +12,13 @@ from jsys.globals import GlobalVariables
 # Global variables
 MAX_ESSAY_TITLE_LENGTH = GlobalVariables.MAX_ESSAY_TITLE_LENGTH
 MAX_ESSAY_CONTENT_LENGTH = GlobalVariables.MAX_ESSAY_CONTENT_LENGTH
-
+a,b = 'ex. "Breaking Fake News"','ex. "Do you really need an example???"'
 
 # Forms
 ''' Create New Essay Form '''
 class EssayCreateForm(forms.ModelForm):
-    title = forms.CharField(label='title', required=False, widget=forms.TextInput(attrs={'class':' '}))
-    content = forms.CharField(label='essay content', required=False, widget=forms.Textarea(attrs={"rows":5, "cols":20, 'class':' '}))
+    title = forms.CharField(label='title', required=False, widget=forms.TextInput(attrs={'placeholder':a}))
+    content = forms.CharField(label='essay content', required=False, widget=forms.Textarea(attrs={'placeholder':b}))
 
     class Meta:
         model = Essay

@@ -41,7 +41,7 @@
   background: var(--dark-red);
   font-style: normal !important;
   padding: 0 .6em 0 .4em;
-  margin-right: .2em;
+  margin-right: .4em;
   #border-right: 2px solid var(--dull-red);
   border-radius: 0 .6em .6em 0;
 }
@@ -50,11 +50,11 @@
   color: silver;
   font-size: .8em;
   font-style: italic;
-  padding-right: .4em;
+  padding-right: .6em;
   margin: 0 auto 1em 1em;
   background: var(--dull-red);
   border: 1px solid var(--dark-red);
-  border-radius: .2em;
+  border-radius: .7em;
   overflow: hidden;
 }
 
