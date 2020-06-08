@@ -61,37 +61,15 @@ def form_essay_create(request, *args, **kwargs):
             form_data.save()
             return redirect(goto)
         elif FORM.errors:
-            return JsonResponse(FORM.errors, status=400)
+            DATA['errors'] = FORM.errors
         elif not FORM:
             DATA = {
                 'message':'Something went majorly wrong',
                 'status':500
             }
             return render(request, 'home.html', context=DATA)
-        else:
-            return render(request, 'jsys/internal_essay_create.html', context=DATA)
+        return render(request, 'jsys/internal_essay_create.html', context=DATA)
 
-
-'''
-
-@permission_classes([IsAuthenticated])
-def form_essay_create(request, *args, **kwargs):
-    if not request.user.is_authenticated:
-        return render(request, 'home.html', context={'message':'Not authenticated!', 'status':401})
-    else:
-        _U = request.user
-        FORM = EssayCreateForm(request.POST or None)
-        goto = request.POST.get('next') or None
-        if FORM.is_valid():
-            form_data = FORM.save(commit=False)
-            form_data.user = _U
-            print(form_data, _U)
-            form_data.save()
-            return redirect(goto)
-        if FORM.errors:
-            return JsonResponse(FORM.errors, status=400)
-    return render(request, 'jsys/internal_essay_create.html', context={'formName':'Create New Essay','form':FORM})
-'''
 
 ''' View individual essay '''
 def form_essay_view(request, essayID, *args, **kwargs):

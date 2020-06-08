@@ -12,6 +12,7 @@
     <form action="" method="POST">
       {% csrf_token %}
       <input type="hidden" value="/" name="next" />
+
       <div class="formRow formRowInput">
         <div class="formInputLabel">
           <b>{{form.name.label|title}}</b>
@@ -20,6 +21,14 @@
           {{form.name}}
         </div>
       </div>
+      {% if errors.name %}
+        <div class='formRow formRowError'>
+          {% for err in errors.name %}
+            <p class="formError"><span>ALERT</span> {{err}}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div class="formRow formRowInput">
         <div class="formInputLabel">
           <b>{{form.category.label|title}}</b>
@@ -28,6 +37,14 @@
           {{form.category}}
         </div>
       </div>
+      {% if errors.category %}
+        <div class='formRow formRowError'>
+          {% for err in errors.category %}
+            <p class="formError"><span>ALERT</span> {{err}}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div class="formRow formRowTextArea">
         <div class="formTextAreaLabel">
           <b>{{form.bio.label|upper}}</b> <i>(Maximum 350 Characters)</i>
@@ -36,6 +53,14 @@
           {{form.bio}}
         </div>
       </div>
+      {% if errors.bio %}
+        <div class='formRow formRowError'>
+          {% for err in errors.bio %}
+            <p class="formError"><span>ALERT</span> {{err}}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div class="formRow formRowSubmit">
         <button type="submit">Post</button>
       </div>

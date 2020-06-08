@@ -26,6 +26,26 @@
 
 .formRowInput {
   box-shadow: 0px 1px 5px 2px inset var(--dark-blue);
+}
+
+.formRowError {
+  position: relative;
+  top: -1em;
+  margin-bottom:-.5em !important;
+}
+
+.formRowError span {
+  font-weight: 900;
+  color: var(--dull-red);
+  font-style: normal !important;
+}
+
+.formError {
+  color: silver;
+  font-size: .8em;
+  font-style: italic;
+  padding: 0 0 0 1em;
+  margin: 0 0 1em 0;
 
 }
 

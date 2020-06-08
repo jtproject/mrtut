@@ -40,12 +40,11 @@ def form_station_create(request, *args, **kwargs):
             form_data.save()
             return redirect(goto)
         elif FORM.errors:
-            return JsonResponse(FORM.errors, status=400)
+            DATA['errors'] = FORM.errors
         elif not FORM:
             DATA = {
                 'message':'Something went majorly wrong',
                 'status':500
             }
             return render(request, 'home.html', context=DATA)
-        else:
-            return render(request, 'jsys/internal_station_create.html', context=DATA)
+        return render(request, 'jsys/internal_station_create.html', context=DATA)

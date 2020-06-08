@@ -15,22 +15,39 @@
     <form action="" method="POST">
       {% csrf_token %}
       <input type="hidden" value="/" name="next" />
+
       <div class="formRow formRowInput">
         <div class="formInputLabel">
-          <b>{{form.title.label}}</b>
+          <b>{{form.title.label|title}}</b>
         </div>
         <div class="formInput">
           {{form.title}}
         </div>
       </div>
+      {% if errors.title %}
+        <div class='formRow formRowError'>
+          {% for err in errors.title %}
+            <p class="formError"><span>ALERT</span> {{err}}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div class="formRow formRowTextArea">
         <div class="formTextAreaLabel">
-          <b>{{form.content.label}}</b> <i>(Maximum 350 Characters)</i>
+          <b>{{form.content.label|upper}}</b> <i>(Maximum 350 Characters)</i>
         </div>
         <div class="formTextArea">
           {{form.content}}
         </div>
       </div>
+      {% if errors.content %}
+        <div class='formRow formRowError'>
+          {% for err in errors.content %}
+            <p class="formError"><span>ALERT</span> {{err}}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+
       <div class="formRow formRowSubmit">
         <button type="submit">Post</button>
       </div>
