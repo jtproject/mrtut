@@ -1,21 +1,59 @@
 @import '/static/jsys/general_style.css';
 
-.formWrap {
-  width: 500px;
-  margin: auto auto;
+
+.essayWrap {
+  margin: 2em auto 0 auto;
+  border-radius: 1em;
+  display: grid;
+  grid-template-rows: auto 2em;
+  overflow: hidden;
 }
 
-.formTitle {
+.essayFooter {
+ background: var(--orange-to-yellow);
+ padding: .4em 1em;
+}
+
+.tableWrap {
+  background: var(--dull-to-light-blue);
+  width: 500px;
+  padding: .5em 1em;
+}
+
+.tableTitle {
   font-size: 1.6em;
   font-style: italic;
   font-weight: 900;
-  margin: 1em 0;
+  margin: .3em 0 1em 0;
   color: silver;
 }
 
-.formRow {
+.tableTitleSmall {
+  font-size: .6em !important;
+}
+
+.tableRow {
   width: 100%;
   margin-bottom: 1.5em;
+}
+
+.tableRow:last-child {
+  margin-bottom: 0 !important;
+}
+
+.tableRowLine {
+  color: var(--dark-red);
+}
+
+.tableRowLine span {
+  font-size: .7em;
+  margin-bottom: .3em;
+}
+
+.tableRowLine p {
+  font-size: 1.6em;
+  color: silver;
+  font-weight: 900;
 }
 
 .formRowInput, .formRowSubmit {

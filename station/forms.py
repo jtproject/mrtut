@@ -11,6 +11,7 @@ from jsys.globals import GlobalVariables
 
 # Global variables
 MAX_STATION_NAME_LENGTH = GlobalVariables.MAX_STATION_NAME_LENGTH
+MAX_STATION_CATEGORY_LENGTH = GlobalVariables.MAX_STATION_CATEGORY_LENGTH
 MAX_STATION_BIO_LENGTH = GlobalVariables.MAX_STATION_BIO_LENGTH
 
 
@@ -35,8 +36,8 @@ class StationCreateForm(forms.ModelForm):
 
     def clean_category(self):
         category = self.cleaned_data.get('category')
-        if len(category) > MAX_STATION_NAME_LENGTH:
-            raise forms.ValidationError(f'Your station category can not be longer than {MAX_STATION_NAME_LENGTH} characters.')
+        if len(category) > MAX_STATION_CATEGORY_LENGTH:
+            raise forms.ValidationError(f'Your station category can not be longer than {MAX_STATION_CATEGORY_LENGTH} characters.')
         if not category:
             raise forms.ValidationError('This field is required.')
         return category

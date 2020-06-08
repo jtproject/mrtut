@@ -3,9 +3,24 @@
 {% block title %}View Essay #{{essay.id}}{% endblock title %}
 
 {% block content %}
-  <div style="color:white;">
-    <p>{{essay.title}}</p>
-    <p>{{essay.content}}</p>
-    <p>{{essay.user}} on {{essay.timestamp}}</p>
+<div class="essayWrap">
+    <div class="tableWrap pLastChildVert pFirstChildVert">
+    <div class="tableRow tableRowLine">
+      <p>{{essay.title|title}}</p>
+    </div>
+    <div class="tableRow tableRowBlock">
+      <p>{{essay.content|capfirst}}</p>
+    </div>
+    <div class="tableRow tableRowLine">
+      <span>
+        Posted by {{essay.user}} on {{essay.timestamp}}
+      </span>
+    </div>
   </div>
+
+  <div class="essayFooter">
+    <span>{{tableName|upper}}</span>
+  </div>
+</div>
+
 {% endblock content %}

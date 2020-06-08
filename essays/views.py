@@ -31,8 +31,6 @@ def home(request, *args, **kwargs):
     search_essay = Essay.objects.all()
     search_station = Station.objects.all()
     DATA = {
-        'message':'All clear!',
-        'status':200,
         'essay':search_essay,
         'station':search_station
     }
@@ -83,10 +81,7 @@ def form_essay_view(request, essayID, *args, **kwargs):
 
     else:
         DATA = {
-            'id': search_essay.id,
-            'user': search_essay.user.username,
-            'title': search_essay.title,
-            'content': search_essay.content,
-            'status': 200
+            'essay':search_essay,
+            'tableName':f'Viewing Essay #{search_essay.id}'
         }
-        return render(request, 'jsys/internal_essay_view.html', context={'essay':search_essay})
+        return render(request, 'jsys/internal_essay_view.html', context=DATA)

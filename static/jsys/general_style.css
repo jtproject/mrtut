@@ -3,7 +3,7 @@
   --dark-red: #640024;
   --dull-blue: #0849c1;
   --dull-red: #c42129;
-  --light-blue: #2199ff;
+  --light-blue: #41a9ff;
   --dull-to-dark-blue: linear-gradient(var(--dull-blue), var(--dark-blue));
   --dull-to-light-blue: linear-gradient(var(--dull-blue), var(--light-blue));
   --orange-to-yellow: linear-gradient(orange, yellow);
@@ -14,11 +14,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: grid;
 }
 
-a {
-  color: white;
-}
+
+.mLastChildVert{margin-bottom:0 !important;}
+.pLastChildVert{padding-bottom:0 !important;}
+.mFirstChildVert{margin-top:0 !important;}
+.pFirstChildVert{padding-top:0 !important;}
+
 
 .dFlex{display:flex;}
 .flexWrap{flex-wrap:wrap;}

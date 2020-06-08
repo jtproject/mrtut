@@ -36,7 +36,6 @@ def form_station_create(request, *args, **kwargs):
         if FORM.is_valid():
             form_data = FORM.save(commit=False)
             form_data.founder = _U
-            print(form_data.name, _U)
             form_data.save()
             return redirect(goto)
         elif FORM.errors:
