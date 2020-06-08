@@ -40,7 +40,7 @@ def home(request, *args, **kwargs):
 
 ''' Create essay form '''
 @permission_classes([IsAuthenticated])
-def form_create_essay(request, *args, **kwargs):
+def form_essay_create(request, *args, **kwargs):
     if not request.user.is_authenticated:
         return render(request, 'home.html', context={'message':'Not authenticated!', 'status':401})
     else:
@@ -53,7 +53,26 @@ def form_create_essay(request, *args, **kwargs):
             print(form_data, _U)
             form_data.save()
             return redirect(goto)
-            #return JsonResponse(FORM.data, status=201)
         if FORM.errors:
             return JsonResponse(FORM.errors, status=400)
     return render(request, 'jsys/internal_essay_create.html', context={'formName':'Create New Essay','form':FORM})
+
+''' View individual essay '''
+def form_essay_view(request, essayID, *args, **kwargs):
+    search_essay = Essay.objects.filter(id=essayID).first()
+    if not search_essay:
+        DATA = {
+            'error': f'essayID [{essayID}] does not exist',
+            'status': 404
+        }
+        return JsonResponse(DATA)
+
+    else:
+        DATA = {
+            'id': search_essay.id,
+            'user': search_essay.user.username,
+            'title': search_essay.title,
+            'content': search_essay.content,
+            'status': 200
+        }
+        return render(request, 'jsys/internal_essay_view.html', context={'essay':search_essay})

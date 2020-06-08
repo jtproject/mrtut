@@ -6,10 +6,11 @@
 }
 
 .formTitle {
-  font-size: 2em;
+  font-size: 1.6em;
   font-style: italic;
+  font-weight: 900;
   margin: 1em 0;
-  color: var(--light-blue)
+  color: silver;
 }
 
 .formRow {
@@ -39,7 +40,7 @@
 .formRowInput, .formRowTextArea {
   border-radius: .5em;
   overflow: hidden;
-  background: orange;
+  background: var(--orange-to-yellow);
 
 }
 
@@ -67,7 +68,7 @@
   border: none;
   border-radius: 1.5em 0 0 1.5em;
   color: white;
-  box-shadow: -1px 0px 5px 2px inset var(--dull-blue);
+  box-shadow: -1px 0px 5px 2px inset var(--dark-blue);
   background: var(--light-blue);
 }
 
@@ -89,7 +90,7 @@
   border: none;
   margin: 0;
   background: var(--light-blue);
-  box-shadow: 0px -1px 5px 2px inset var(--dull-blue);
+  box-shadow: 0px -1px 5px 2px inset var(--dark-blue);
   padding: .5em;
   width: calc(100% - 1em);
   height: calc(100% - 1em);
@@ -102,11 +103,18 @@
   cursor: pointer;
   font-weight: 900;
   color: var(--dark-blue);
-  background: orange;
+  background: var(--orange-to-yellow);
   width: 120px;
   border: none;
   border-radius: .5em;
   font-size: 1.5em;
   padding-bottom: .2em;
-  box-shadow: 0px -1px 5px 2px inset var(--dark-blue), 0px 2px 10px 1px var(--dull-blue);
+  box-shadow: 0px -1px 5px 2px inset var(--dark-blue);
+  transition-duration: 500ms;
+  transition-property: background, color;
+}
+
+.formRowSubmit button:hover {
+  background: var(--dull-to-light-blue);
+  color: silver;
 }

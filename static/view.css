@@ -1,5 +1,16 @@
 @import '/static/jsys/general_style.css';
 
 body {
-  background: #0849c1;
+  background: var(--dull-to-light-blue);
+}
+
+.border {
+  width:200px;
+  border:1px solid orange;
+  padding:1.5em;
+  margin:1em;
+  color: silver;
+  background:var(--dark-blue);
+  border-radius:.5em;
+  box-shadow:0px 5px 10px 2px orange,0px -3px 15px 2px var(--dull-red), 0px 0px 15px 2px inset yellow;
 }

@@ -17,14 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 from essays.views import (
-    home, form_create_essay
+    home, form_essay_create, form_essay_view
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('essay/create/', form_create_essay),
-    path('station/', form_create_essay),
+    path('essay/create/', form_essay_create),
+    path('essay/<int:essayID>/', form_essay_view),
+    path('station/', form_essay_view),
     path('raw/', home),
 
 ]

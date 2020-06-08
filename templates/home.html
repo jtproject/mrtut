@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Fake Page</title>
-  <style>.border{width:200px;border:1px solid yellow;padding:1em;margin:1em;background:var(--light-blue);border-radius:.5em;box-shadow:0px 5px 10px 1px orange,0px -5px 10px 2px var(--dull-red), 0px 0px 10px 2px inset yellow;}</style>
+  <style>.border{width:200px;border:1px solid yellow;padding:1em;margin:1em;background:var(--dull-to-light-blue);border-radius:.5em;box-shadow:0px 5px 10px 1px orange,0px -5px 10px 2px var(--dull-red), 0px 0px 10px 2px inset yellow;}</style>
   <link rel="stylesheet" href="/static/view.css">
 </head>
 <body style="text-align:center;">
@@ -27,7 +27,7 @@
   {% if essay %}
     <div class="dFlex flexWrap" style="margin-top:1em;width:100%;justify-content:center;">
       {% for e in essay %}
-        <div class="border">
+        <div class="border" onclick="location.href='/essay/{{e.id}}';">
           <p>{{e.timestamp}} by {{e.user}}  -- ESSAY#{{e.id}}</p>
           <p>"{{e.title|title}}"</p>
           <p>{{e.concat_content|upper}}</p>
